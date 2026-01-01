@@ -14,6 +14,13 @@ company_size = st.selectbox(
 )
 
 if st.button("Predict Salary"):
-    input_data = np.array([[min_salary, company_size]])
+   input_data = np.array([[
+    min_salary,        # Feature 1
+    company_size,      # Feature 2
+    0,                 # Feature 3 (dummy)
+    0,                 # Feature 4 (dummy)
+    0,                 # Feature 5 (dummy)
+    0                 
+]])
     prediction = model.predict(input_data)
     st.success(f"Predicted Average Salary: ${prediction[0]:.2f}K")
