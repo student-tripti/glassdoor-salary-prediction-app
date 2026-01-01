@@ -36,9 +36,8 @@ class MockSalaryPredictor(BaseEstimator, TransformerMixin):
         
         return predictions
 
-# Load pipeline
-with open("salary_prediction_pipeline.pkl", "rb") as f:
-    model = pickle.load(f)
+# Initialize mock model
+model = MockSalaryPredictor()
 
 # Page config
 st.set_page_config(
